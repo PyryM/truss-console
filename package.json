@@ -2,13 +2,13 @@
   "name": "truss-console",
   "main": "./lib/truss-console",
   "version": "0.0.0",
-  "description": "A short description of your package",
+  "description": "truss remote console",
   "keywords": [
   ],
   "activationCommands": {
     "atom-workspace": "truss-console:toggle"
   },
-  "repository": "https://github.com/atom/truss-console",
+  "repository": "https://github.com/PyryM/truss-console",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
