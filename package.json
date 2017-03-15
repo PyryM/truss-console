@@ -1,0 +1,25 @@
+{
+  "name": "truss-console",
+  "main": "./lib/truss-console",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": "truss-console:toggle"
+  },
+  "repository": "https://github.com/atom/truss-console",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  },
+  "consumedServices": {
+    "ink": {
+      "versions": {
+        "*": "consumeInk"
+      }
+    }
+  }
+}
