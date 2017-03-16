@@ -1,5 +1,6 @@
 TrussConsoleView = require './truss-console-view'
 {CompositeDisposable} = require 'atom'
+InfoView = require './console-info-view'
 
 module.exports = TrussConsole =
   trussConsoleView: null
@@ -18,6 +19,7 @@ module.exports = TrussConsole =
 
     # Register command that toggles this view
     @subscriptions.add atom.commands.add 'atom-workspace', 'truss-console:toggle': => @toggle()
+    console.log "activated?"
 
   deactivate: ->
     @modalPanel.destroy()
@@ -34,12 +36,25 @@ module.exports = TrussConsole =
       split: 'right'
       searchAllPanes: true
 
+  testOutput: (ncons) ->
+    # do stuff?
+    eh = new InfoView("Vector", [{k: "x", v: 12},
+                                 {k: "y", v: 13},
+                                 {k: "z", v: 14}])
+
+    ncons.output({
+      type: 'result',
+      icon: 'circuit-board',
+      result: eh.getTreeView(@ink)
+    })
+
   evalInput: (s, ncons) ->
     console.log 'Would have evaluated: ' + s
     if @client?
       ncons.stdout("[evaluated]")
     else
       ncons.info('[no client connected]')
+      @testOutput ncons
 
   consumeInk: (ink) ->
     @ink = ink
